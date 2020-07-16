@@ -22,4 +22,10 @@ contract("BitWise", () =>{
         const resultAsm = await bitwise.countBitSetAsm(myNumber);
         expect(result).to.be.a.bignumber.that.equal(resultAsm, "result should match");
     })
+
+    it('countBitSetAsm(uint8 data) should pass', async () => {
+        data = 0;
+        const resultAsm = await bitwise.countBitSetAsm(0);
+        assert(resultAsm, 0, "result should match 0");
+    })
 }) 
